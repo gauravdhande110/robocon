@@ -1,12 +1,12 @@
 #include <Servo.h>
-Servo myservo;
-const int trigPin = 11;
+Servo myservo;         
+const int trigPin = 11;   //define ultrasonic sensor pins
 const int echoPin = 10;
-int pwmL1   = 2;
-int pwmL2   = 3;
-int pwmR1   = 4;
-int pwmR2   = 5;
-int dirL1   = 6;
+int pwmL1   = 2;         //motor PWM for left upper omni wheel
+int pwmL2   = 3;         //motor PWM for left lower omni wheel
+int pwmR1   = 4;         //motor PWM for right upper omni wheel
+int pwmR2   = 5;         //motor PWM for right lower omni wheel
+int dirL1   = 6;         // direction pins
 int dirL2   = 7;
 int dirR1   = 8;
 int dirR2   = 9;
@@ -46,7 +46,7 @@ void setup()
   analogWrite(pwmR2, 0);
   delay(1000);
 }
-int distanceRet()
+int distanceRet()               // function returns distance from ultrasonic sensor
 {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
